@@ -1,0 +1,66 @@
+.form {
+  height: 95vh;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr) max-content max-content 1fr;
+  grid-template-rows: 1fr repeat(5, minmax(min-content, 2.5rem)) 1fr;
+  gap: 2.5rem;
+  margin-top: 5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0rem;
+  }
+  &-item {
+    border: none;
+    text-transform: uppercase;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+    &:focus{
+      outline:none
+    }
+
+    &__1 {
+      grid-row: 2/3;
+      grid-column: 5/8;
+    }
+    &__2 {
+      grid-column: 5/8;
+      grid-row: 3/4;
+    }
+    &__3 {
+      grid-column: 6/7;
+      grid-row: 4/5;
+      transform: translateX(-50%);
+      @media only screen and (max-width: $bp-medium) {
+        grid-column: none;
+        grid-row: none;
+        transform: translateX(0%);
+      }
+    }
+    &__5 {
+      grid-column: 5/6;
+      grid-row: 5/6;
+    }
+    &__4 {
+      grid-column: 6/7;
+      grid-row: 5/6;
+    }
+  }
+}
+.forgot {
+  color: #fff;
+  &:focus {
+    outline: none;
+  }
+}
+.signup {
+  color: #fff;
+  &:focus {
+    outline: none;
+  }
+}
